@@ -5,9 +5,10 @@ import Callback from "./Authentication/Callback"
 import CourseManager from '../modules/CourseManager';
 import Home from "./Home/home"
 import Welcome from "./Welcome/Welcome"
-import NewRound from "./newRound/NewRound"
+import NewRound from "./newRound/CourseSelect"
 import RoundHistoryList from "./roundHistory/RoundHistoryList"
 import HistoryManager from '../modules/HistoryManager';
+import CourseSelect from "./newRound/CourseSelect"
 export default class ApplicationViews extends Component {
     state = {
         welcome: [],
@@ -28,6 +29,7 @@ componentDidMount(){
 //          }
     .then(welcome => (newState.welcome = welcome))
     .then(home => (newState.home = home))
+    .then(courseSelect => (newState.courseSelect = courseSelect))
     .then(newRound => (newState.newRound = newRound))
     .then(HistoryManager.getAllUserRounds)
     .then(roundHistory =>  (newState.roundHistory = roundHistory))
@@ -49,7 +51,8 @@ render() {
          <Route exact path="/callback" component={Callback} />
          <Route exact path="/home" render={(props) => {
                     if (Auth0Client.isAuthenticated()) {
-                    return <Home home={this.state.home} />
+                    return <Home {...props} home={this.state.home}
+                                            courseSelect={this.state.courseSelect} />
                         // <Course course={this.course}>
 
                 } else {
@@ -58,10 +61,9 @@ render() {
                   }
                 }} />
 
-
-        <Route exact path="/newRound" render={(props) => {
+        <Route exact path="/courseSelect" render={(props) => {
                     if (Auth0Client.isAuthenticated()) {
-                    return <NewRound {...props} newRound={this.state.newRound}
+                    return <CourseSelect {...props} courseSelect={this.state.courseSelect}
                     />
                 } else {
                     Auth0Client.signIn();
@@ -69,9 +71,23 @@ render() {
                   }
                 }} />
 
-        {/* <Route path="/newRound/start" render={(props) => {
+        <Route exact path="/newRound" render={(props) => {
                     if (Auth0Client.isAuthenticated()) {
-                    return <NewRoundStart {...props} newRoundStart={this.state.newRoundStart}
+                    return <NewRound {...props}
+                    newRound={this.state.newRound}
+                    // RoundStart={this.state.RoundStart}
+                    // holes={this.state.holes}
+                    />
+                } else {
+                    Auth0Client.signIn();
+                    return null;
+                  }
+                }} />
+
+        {/* <Route path="/roundStart" render={(props) => {
+                    if (Auth0Client.isAuthenticated()) {
+                    return <RoundStart {...props}
+
                     />
                 } else {
                     Auth0Client.signIn();

@@ -1,44 +1,28 @@
-import React, { Component } from 'react'
+// import React, {Component} from "react"
+// import { DropdownButton, Dropdown } from "react-bootstrap"
 
-class Course extends Component {
-//
-// getCourseNames = () => {
-// const courses[] = {this.props.courses.name.map((course) =>
+// class Course extends Component {
 
+// render () {
+// let courses = this.props.state.courses;
+// let courseOptions = courses.map((course) =>
+//   <Dropdown.Item key={course.id}> {course.name} / {course.holeCount}</Dropdown.Item>
+// )
+// console.log(courses);
+// return (
+//         <React.Fragment>
+//           <div id="react-search">
+//             <DropdownButton id="dropdown-basic-button" title="Select a Course">
+//             {courseOptions}
+
+//                           <Dropdown.Item href="#/action-13">
+//                           Other
+//                           </Dropdown.Item>
+
+//             </DropdownButton>
+//             </div>
+//           </React.Fragment>
+// )}
 // }
 
-    render() {
-        return (
-
-                <section className="courses">
-                    <div className="dropdown">
-                      <button className="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton" data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      >Select Course</button>
-                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a key={course.id} className="dropdown-item" href="#">{course[0].name}</a>
-                      <a key={course.id} className="dropdown-item" href="#">{course[1].name}</a>
-                      <a key={course.id} className="dropdown-item" href="#">{course[2].name}</a>
-                      <a key={course.id} className="dropdown-item" href="#">{course[3].name}</a>
-                      <a key={course.id} className="dropdown-item" href="#">{course[4].name}</a>
-                      <a key={course.id} className="dropdown-item" href="#">{course[5].name}</a>
-                      <a key={course.id} className="dropdown-item" href="#">{course[6].name}</a>
-                      <a key={course.id} className="dropdown-item" href="#">{course[7].name}</a>
-                      <a key={course.id} className="dropdown-item" href="#">{course[8].name}</a>
-                      <a key={course.id} className="dropdown-item" href="#">{course[9].name}</a>
-                      <a key={course.id} className="dropdown-item" href="#">{course[10].name}</a>
-                      <a key={course.id} className="dropdown-item" href="#">{course[11].name}</a>
-                      <a className="dropdown-item" href="#">Other</a>
-
-                    </div>
-                    </div>
-                    </section>
-      )
-    }
-}
-
-
-export default Course
+// export default Course;

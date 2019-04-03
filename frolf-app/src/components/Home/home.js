@@ -18,7 +18,7 @@ class Home extends Component {
 
                 <h5 className="card-title">
                     {/* <img src={new_Round} className="icon--new_Round" alt="New Round Icon"/> */}
-                    New Round (section placeholder Text)
+                    Barboursville Park Course
 
 
 
@@ -27,7 +27,7 @@ class Home extends Component {
                         onClick={() => this.props.history.push("/newRound")
                         }
                         >
-                        Start
+                        Start Round
                         </button>
 
                 </h5>
