@@ -1,78 +1,100 @@
 import React, { Component } from 'react'
-import ReactDom from "react-dom"
-import {Route, withRouter} from "react-router-dom"
-import { DropdownButton, Dropdown } from "react-bootstrap"
+// import RoundManager from "../../modules/RoundManager"
+
+
 
 
 
 class CourseSelect extends Component {
 
-  // state = {
+  state = {
+      roundDate: "",
+      courseId: "",
+      userId: "",
+      roundScore: ""
 
-  //     selectedCourse: ""
-  //   }
+    }
+
+    handleFieldChange = evt => {
+      const stateToChange = {};
+      stateToChange[evt.target.id]=evt.target.value
+      this.setState(stateToChange);
+    }
+
+    handleDDchange = evt => {
+       const newState = {};
+       newState.courseId=evt.target.value
+       this.setState(newState)
+
+
+
+
+    }
+
+    constructNewRound = evt => {
+      evt.preventDefault();
+        const nRound = {
+          date: this.state.roundDate,
+          userId: parseInt(sessionStorage.getItem("userID")),
+          courseId: this.state.courseId,
+          roundScore: "0"
+
+        }
+
+        this.props
+        .addNewRound(nRound)
+
+
+
+        .then(() => this.props.history.push(`/roundStart/${this.state.courseId}`))
+      }
+
+
+
+
     render () {
         return (
 
           <React.Fragment>
-        <Dropdown>
-            <Dropdown.Toggle
-            variant="seuccess"
-            id="dropdown-basic"
-            // value={this.state.selectedCourse}
-            // onChange={(e) => this.setState({selectedCourse: e.target.value})}>
-            >Select a Course
+            <form className="roundForm">
+              <div className="form-group">
+                <label htmlFor="roundDate">Round Date</label>
+                <input
+                  type="date"
+                  required
+                  className="form-control"
+                  onChange={this.handleFieldChange}
+                  id="roundDate"
 
-            </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                          <Dropdown.Item href="#/action-1" onSelect={this.select}>
-                          Barboursville Park
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-2" onClick={this.select}>
-                          Beech Fork State Park
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-3" onClick={this.select}>
-                          Indian Rock
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-4" onClick={this.select}>
-                          Rotary Park
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-5" onClick={this.select}>
-                          Valley Park
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-6" onClick={this.select}>
-                          Armco Park - White Course
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-7" onClick={this.select}>
-                          Armco Park - Blue Course
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-8" onClick={this.select}>
-                          Eleanor Park
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-9" onClick={this.select}>
-                          St. Albans City Park
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-10" onClick={this.select}>
-                          Wine Cellar
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-11" onClick={this.select}>
-                          Little Creek Park
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-12" onClick={this.select}>
-                          Coonskin
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#/action-13" onClick={this.select}>
-                          Other
-                          </Dropdown.Item>
-                          </Dropdown.Menu>
-                          </Dropdown>
+                />
+              </div>
+              <div className="form-group">
+              <label htmlFor="course">Which Course</label>
+              <select
+                defaultValue=""
+                id="courseId"
+                onChange={this.handleDDchange}
 
-                          <button className="btn btn-success"
-                          onClick={() => this.props.history.push("/roundStart")
-                          }>
-                          Start Round
-                          </button>
-                    </React.Fragment>
+              >
+              <option value="" > Select a Course</option>
+              {this.props.courseSelect.map(c => (
+                <option key={c.id} value={c.id} id={c.id}>
+                {c.name} / {c.holeCount}
+                </option>
+
+              ))}
+              </select>
+              </div>
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={this.constructNewRound}
+                >
+                Start Round
+                </button>
+            </form>
+            </React.Fragment>
+
 
         )
       }
@@ -82,7 +104,6 @@ export default CourseSelect
 
 
 
-// // ReactDom.render(<CourseSelect />, document.getElementById('react-search'))
 
 
 

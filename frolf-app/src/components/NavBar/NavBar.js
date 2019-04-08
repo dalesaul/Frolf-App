@@ -12,6 +12,7 @@ class NavBar extends Component {
     };
 
     render() {
+        console.log("in the render method of navbar",auth0Client.isAuthenticated());
         return (
             <nav className="navbar navbar-light fixed-top light-blue flex-md-nowrap p-0 shadow">
             <Link className="navbar-brand" to="/">
@@ -48,7 +49,7 @@ class NavBar extends Component {
                </Link>
              </li>
              <li className="nav-item">
-               <Link className="nav-link" to="/newRound">
+               <Link className="nav-link" to="/newRound/courseSelect">
                  New Round
                </Link>
              </li>

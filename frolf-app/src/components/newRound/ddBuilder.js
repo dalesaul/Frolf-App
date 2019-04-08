@@ -2,6 +2,7 @@
 // // import ReactDom from "react-dom"
 // // import {Route, withRouter} from "react-router-dom"
 // import CourseManager from "../../modules/CourseManager"
+// import { Dropdown } from "react-bootstrap"
 
 
 
@@ -57,3 +58,57 @@
 // }
 
 // export default CourseSelect;
+
+
+
+{/* <Dropdown>
+            <Dropdown.Toggle
+            variant="success"
+            id="dropdown-basic"
+            value={this.state.selectedCourse}
+            onChange={(e) => this.setState({selectedCourse: e.target.value})}
+            title={this.state.selectedCourse}>
+            Select a Course
+            </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                          <Dropdown.Item href="#" onSelect={ this.select}>
+                          Barboursville Park
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          Beech Fork State Park
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          Indian Rock
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          Rotary Park
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          Valley Park
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          Armco Park - White Course
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          Armco Park - Blue Course
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          Eleanor Park
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          St. Albans City Park
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          Wine Cellar
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          Little Creek Park
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          Coonskin
+                          </Dropdown.Item>
+                          <Dropdown.Item href="#" onSelect={this.select}>
+                          Other
+                          </Dropdown.Item>
+                          </Dropdown.Menu>
+                          </Dropdown> */}
