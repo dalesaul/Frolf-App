@@ -4,5 +4,8 @@ export default {
     getAll(){
         return fetch(`${remoteURL}/courses`)
         .then(e => e.json())
+
+
     }
+
 }

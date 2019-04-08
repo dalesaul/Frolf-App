@@ -8,7 +8,7 @@ export default class HistoryCard extends Component {
     return (
       <div className="card">
         <div className="card-body">
-          {/* <h5 className="card-title">{this.props.}</h5> */}
+          <h5 className="card-title">{this.props.round.name}</h5>
 
           <p>this is test data</p>
         </div>

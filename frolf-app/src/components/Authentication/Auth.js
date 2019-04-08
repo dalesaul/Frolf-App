@@ -32,6 +32,7 @@ class Auth {
   }
 
   signIn() {
+
     this.auth0.authorize();
   }
 

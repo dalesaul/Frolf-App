@@ -18,16 +18,16 @@ class Home extends Component {
 
                 <h5 className="card-title">
                     {/* <img src={new_Round} className="icon--new_Round" alt="New Round Icon"/> */}
-                    New Round (section placeholder Text)
+                    Select a Course
 
 
 
 
                     <button className="btn btn-success"
-                        onClick={() => this.props.history.push("/newRound")
+                        onClick={() => this.props.history.push("/newRound/courseSelect")
                         }
                         >
-                        Start
+                        New Round
                         </button>
 
                 </h5>
