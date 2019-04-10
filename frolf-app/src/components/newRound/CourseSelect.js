@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import RoundManager from "../../modules/RoundManager"
+import RoundManager from "../../modules/RoundManager"
 
 
 
@@ -11,7 +11,8 @@ class CourseSelect extends Component {
       roundDate: "",
       courseId: "",
       userId: "",
-      roundScore: ""
+      roundScore: "",
+      roundId: ""
 
     }
 
@@ -43,11 +44,10 @@ class CourseSelect extends Component {
 
         this.props
         .addNewRound(nRound)
-
-
-
-        .then(() => this.props.history.push(`/roundStart/${this.state.courseId}`))
-      }
+        .then(parsedRound => {
+          this.props.history.push(`/roundStart/${parsedRound.id}/${this.state.courseId}`)
+        }
+        )}
 
 
 

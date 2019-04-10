@@ -6,17 +6,20 @@ import CourseManager from '../modules/CourseManager';
 import Home from "./Home/home"
 import Welcome from "./Welcome/Welcome"
 import NewRound from "./newRound/CourseSelect"
-// import HoleManager from "../modules/HoleManager"
 import RoundHistoryList from "./roundHistory/RoundHistoryList"
 import HistoryManager from '../modules/HistoryManager';
 import CourseSelect from "./newRound/CourseSelect"
 import RoundStart from "./newRound/RoundStart"
 import RoundManager from '../modules/RoundManager';
-// import HoleDetails from './newRound/HoleDetails';
+import HoleDetails from './newRound/HoleDetails';
+import HoleManager from '../modules/HoleManager';
+import EditPar from "./newRound/EditPar"
+
+
 export default class ApplicationViews extends Component {
     state = {
         welcome: [],
-        home: [],
+        // home: [],
         newRound: [],
         roundHistory: [],
         courses: [],
@@ -29,10 +32,11 @@ export default class ApplicationViews extends Component {
 
     addNewRound = roundObject =>
     RoundManager.postRound(roundObject)
-    .then(roundStart =>
-        this.setState ({
-            roundStart: roundStart
-        }))
+
+
+    updateExistingPar = editedParObject => {
+        return HoleManager.put(editedParObject)
+    }
 
 
 componentDidMount(){
@@ -70,7 +74,7 @@ render() {
                         // <Course course={this.course}>
 
                 } else {
-                    // Auth0Client.signIn();
+
                     return null;
                   }
                 }} />
@@ -82,7 +86,7 @@ render() {
                     roundStart={this.state.RoundStart}
                     />
                 } else {
-                    // Auth0Client.signIn();
+
                     return null;
                   }
                 }} />
@@ -96,7 +100,7 @@ render() {
 
                     />
                 } else {
-                    // Auth0Client.signIn();
+
                     return null;
                   }
                 }} />
@@ -105,27 +109,53 @@ render() {
                     if (Auth0Client.isAuthenticated()) {
                     return <RoundStart {...props}
                     roundStart={this.state.roundStart}
-                    //
-                    // holes={this.state.holes}
+
                     />
                 } else {
-                    // Auth0Client.signIn();
+
                     return null;
                   }
                 }} />
 
-        <Route path="/roundStart/:courseId(\d+)" render={(props) => {
+        <Route path="/roundStart/:roundId(\d+)/:courseId(\d+)" render={(props) => {
                     if (Auth0Client.isAuthenticated()) {
                     return <RoundStart {...props}
                     roundStart={this.state.roundStart}
                     addNewRound={this.addNewRound}
-
-                    // holes={this.state.holes}
-                    // rounds={this.state.rounds}
+                    holedetails={this.state.holedetails}
+                    holes={this.state.holes}
 
                     />
                 } else {
-                    // Auth0Client.signIn();
+
+                    return null;
+                  }
+                }} />
+
+        <Route path="/:roundId(\d+)/:courseId(\d+)/:holeId(\d+)" render={(props) => {
+                    if (Auth0Client.isAuthenticated()) {
+                    return <HoleDetails {...props}
+                    holecard={this.state.holecard}
+                    holedetails={this.state.holedetails}
+                    roundStart={this.state.roundStart}
+                    holes={this.state.holes}
+
+                    />
+                } else {
+
+                    return null;
+                  }
+                }} />
+
+<Route path="/editPar/:holeId(\d+)" render={(props) => {
+                    if (Auth0Client.isAuthenticated()) {
+                    return <EditPar {...props}
+                    roundStart={this.state.roundStart}
+                    holeDetails={this.state.holeDetails}
+
+                    />
+                } else {
+
                     return null;
                   }
                 }} />
@@ -136,7 +166,7 @@ render() {
 
                     />
                 } else {
-                    // Auth0Client.signIn();
+
                     return null;
                   }
                 }} />

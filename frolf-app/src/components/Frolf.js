@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import NavBar from "./NavBar/NavBar"
 import ApplicationViews from "./ApplicationViews"
+
 import "bootstrap/dist/css/bootstrap.min.css"
 import Auth0Client from "./Authentication/Auth"
 // import { bubble as Menu } from "react-burger-menu";
@@ -18,13 +19,17 @@ class Frolf extends Component {
         } catch (err) {
             if (err.error !== 'login_required') console.log(err.error);
         }
-        }
 
+
+
+    }
     render () {
+
         return (
             <React.Fragment>
                 <NavBar />
                 <ApplicationViews />
+
             </React.Fragment>
         )
     }
