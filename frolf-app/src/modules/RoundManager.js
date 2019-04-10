@@ -1,9 +1,9 @@
 const remoteURL = "http://localhost:5002"
 
 export default {
-addHoleScoreToRound(userId, newHoleScore) {
-        return fetch(`${remoteURL}/rounds/?userId=${userId}`, {
-            method: "PATCH",
+addHoleScoreToRound(newHoleScore) {
+    return fetch(`${remoteURL}/shots/`, {
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },

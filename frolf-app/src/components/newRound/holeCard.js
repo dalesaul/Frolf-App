@@ -1,27 +1,40 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import flag from "./GFlag_icon.png"
-import { homedir } from "os";
+
+
 
 export default class HoleCard extends Component {
 
-    // need to add state to access hole# ?
+// state= {
+//     roundScore: "",
+//     roundId: "",
+//     courseId: ""
+
+// }
+
+
+
     render() {
 
         return(
             <div className="card">
                 <div className="card-body">
                 <h5 className="card-title">
-                <img src={flag} className="icon--flag" alt="Flag Icon"/>
                 Hole {this.props.id}
+                <img src={flag} className="icon--flag" alt="Flag Icon"/>
+                Par {this.props.value}
 
-                {/* also the id here for the details, technically links to the holes database but
-                the user should be updating their hole score for the round. need to fix also */}
-                <Link className="nav-link" to={`roundStart/currhole`}>
+                <Link className="nav-link" to={`/${this.props.roundId}/${this.props.courseId}/${this.props.holeId}`}  >
+                {/* roundId={this.props.roundId} holeNumber={this.props.id} holeId={this.props.holeId} */}
                 Enter Score
                 </Link>
-                </h5>
 
+                </h5>
+                <Link className="nav-link" to={`/editPar/${this.props.holeId}/`}
+                    >
+                    Edit Par
+                    </Link>
                 </div>
 
 
