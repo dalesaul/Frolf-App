@@ -30,7 +30,29 @@ postRound(newRound) {
         },
         body: JSON.stringify(newRound)
         }).then(data => data.json())
+},
+
+postRoundScore (id, totalScoreObject) {
+      return fetch(`${remoteURL}/rounds/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(totalScoreObject)
+        }).then(data => data.json());
+    },
+
+getFullRound: roundId => {
+        return fetch(`${remoteURL}/shots/?roundId=${roundId}`)
+        .then(r => r.json())
+    },
+
+deleteRound: id => {
+    return fetch(`${remoteURL}/rounds/${id}`, {
+        method: "DELETE"
+    })
+    .then(() => fetch(`${remoteURL}/rounds`))
+    .then(e => e.json)
+
 }
-
-
 }

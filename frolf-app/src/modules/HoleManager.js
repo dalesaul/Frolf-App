@@ -16,6 +16,8 @@ export default {
         .then(h => h.json())
     },
 
+
+
     put(editedPar) {
         return fetch(`${remoteURL}/holes/${editedPar.id}`, {
             method: "PATCH",

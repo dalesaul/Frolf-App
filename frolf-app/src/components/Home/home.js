@@ -41,7 +41,7 @@ class Home extends Component {
                     {/* <img src={round_History} className="icon--round_history" alt="Round History Icon"/> */}
                     History (section placeholder text)
                     <button className="btn btn-success"
-                        onClick={() => this.props.history.push("/roundHistory")
+                        onClick={() => this.props.history.push("/roundHistory/userId")
                         }
                         >
                         View Rounds

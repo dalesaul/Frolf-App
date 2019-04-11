@@ -24,7 +24,6 @@ class Frolf extends Component {
 
     }
     render () {
-
         return (
             <React.Fragment>
                 <NavBar />
