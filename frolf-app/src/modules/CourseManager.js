@@ -6,6 +6,11 @@ export default {
         .then(e => e.json())
 
 
+    },
+
+    getOne: id => {
+        return fetch(`${remoteURL}/courses/?courseId=${id}`)
+        .then(e => e.json())
     }
 
 }
