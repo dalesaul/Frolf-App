@@ -19,7 +19,7 @@ export default class EditPar extends Component {
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
-    };
+    console.log(stateToChange)};
 
     updateExistingPar = evt => {
         evt.preventDefault()
@@ -30,8 +30,7 @@ export default class EditPar extends Component {
             par: this.state.newHolePar
 
         };
-        this.props
-            .updatePar(editedPar)
+       (HoleManager.put(editedPar))
             .then(() => this.props.history.goBack())
     };
 
