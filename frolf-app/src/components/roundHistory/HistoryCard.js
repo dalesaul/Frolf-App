@@ -9,9 +9,8 @@ export default class HistoryCard extends Component {
       <div className="card">
         <div className="card-body">
           <h5 className="card-title">Round Summary</h5>
-          <p>{this.props.roundScore} </p>
-          <p>{this.roundScore}</p>
-        </div>
+          <h4 className="cScore">{this.props.roundScore} </h4>
+         </div>
 
         </div>
 

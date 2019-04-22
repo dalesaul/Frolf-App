@@ -73,7 +73,7 @@ export default class HoleDetails extends Component {
 
             <button
             type="submit"
-            className="btn btn-success"
+            className="btn btn-success score-btn"
             onClick={this.ConstructNewHoleScore}
                    >
                     Submit Score

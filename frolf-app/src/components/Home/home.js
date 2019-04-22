@@ -1,27 +1,21 @@
 import React, {Component} from 'react';
-
-
-// import CourseManager from "../../modules/CourseManager"
-// import new_Round from "./new_Round.png"
+import disc from "./F_Disc.PNG"
+import hist from "./F_histo.png"
+import "./home.css"
 
 class Home extends Component {
-    // let DDlist = []
-    // CourseManager.getAll()
-    // .then()
+
 
     render() {
         return (
             <React.Fragment>
             <section className="home">
             <div className="card">
-            <div className="card-body">
+            <div className="card-body home-body">
 
                 <h5 className="card-title">
-                    {/* <img src={new_Round} className="icon--new_Round" alt="New Round Icon"/> */}
+                    <img src={disc} className="icon--new_Round" alt="New Round Icon"/>
                     Select a Course
-
-
-
 
                     <button className="btn btn-success"
                         onClick={() => this.props.history.push("/newRound/courseSelect")
@@ -36,10 +30,10 @@ class Home extends Component {
             </section>
             <section className="home">
             <div className="card">
-            <div className="card-body">
+            <div className="card-body home-body">
                 <h5 className="card-title">
-                    {/* <img src={round_History} className="icon--round_history" alt="Round History Icon"/> */}
-                    History (section placeholder text)
+                    <img src={hist} className="icon--round_history" alt="Round History Icon"/>
+                    Round History
                     <button className="btn btn-success"
                         onClick={() => this.props.history.push("/roundHistory/userId")
                         }

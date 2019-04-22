@@ -1,8 +1,9 @@
 
 .round-holes {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
+    padding: 10px 100px;
 }
 
 .icon--flag {
@@ -16,15 +17,23 @@
 }
 
 .plusButt {
-    padding: 10px;
+    margin: 10px;
+    padding: 2px;
 }
 
 .minusButt {
-    padding: 10px;
+    margin: 10px;
+    padding: 2px;
 }
 
 .card {
-    width: 10rem;
+    width: 8rem;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+.card-body{
+  box-shadow: 4px 8px rgb(113, 162, 211);
+  border-radius: 10px;
 }
 
 .card-title {
@@ -35,9 +44,42 @@
 }
 
 .card-link {
-    margin: 12px 0 0 0;
+    /* margin: 12px 0 0 0; */
     font-size: 0.7em;
 }
 
+.final-btn{
+border-color: darkgreen;
+}
 
+#root > div > div > section > div{
+    margin-bottom: 10px;
+}
+
+.rounds-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hole{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.score-btn{
+margin-top: 9px;
+border-color: darkgreen;
+}
+
+.home-link{
+    font-size: 24px;
+    color: #004085;
+    background-color: rgba(243, 239, 239, 0.726);
+    border-radius: 10px;
+    margin-top: 12px;
+}
 
