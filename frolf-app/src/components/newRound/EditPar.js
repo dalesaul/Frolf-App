@@ -23,14 +23,7 @@ export default class EditPar extends Component {
 
     updateExistingPar = evt => {
         evt.preventDefault()
-        const editedPar = {
-            id: this.props.match.params.holeId,
-            courseId: parseInt(this.state.courseId),
-            number: this.state.holeNumber,
-            par: this.state.newHolePar
-
-        };
-       (HoleManager.put(editedPar))
+           HoleManager.put(this.state.holePar, this.props.match.params.holeId)
             .then(() => this.props.history.goBack())
     };
 

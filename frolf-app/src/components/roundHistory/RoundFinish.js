@@ -54,9 +54,9 @@ export default class RoundFinish extends Component {
               >
                 Delete
               </button>
-              <Link className="nav-link" to={"/home"}
+              <Link className="nav-link home-link" to={"/home"}
                     >
-                    go Home
+                    Return to Home
                     </Link>
               </section>
               </React.Fragment>

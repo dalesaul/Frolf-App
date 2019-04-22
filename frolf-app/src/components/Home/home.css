@@ -1,0 +1,20 @@
+.home {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.home-body{
+    background-color: white;
+}
+
+.icon--new_Round {
+    width: 75px;
+    height: 75px;
+}
+
+.icon--round_history {
+    width: 100px;
+    height: 75px;
+}

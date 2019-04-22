@@ -18,13 +18,13 @@ export default {
 
 
 
-    put(editedPar) {
-        return fetch(`${remoteURL}/holes/${editedPar.id}`, {
+    put(editedPar, id) {
+        return fetch(`${remoteURL}/holes/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-type": "application/json"
             },
-            body: JSON.stringify(editedPar)
+            body: JSON.stringify({par: editedPar})
         }).then(data => data.json());
     }
 }

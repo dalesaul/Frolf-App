@@ -36,7 +36,7 @@ class CourseSelect extends Component {
       evt.preventDefault();
         const nRound = {
           date: this.state.roundDate,
-          userId: parseInt(sessionStorage.getItem("userID")),
+          userId: parseInt(sessionStorage.getItem("credentials")),
           courseId: this.state.courseId,
           roundScore: "0"
 
@@ -69,7 +69,7 @@ class CourseSelect extends Component {
                 />
               </div>
               <div className="form-group">
-              <label htmlFor="course">Which Course</label>
+              <label htmlFor="course">Course Name</label>
               <select
                 defaultValue=""
                 id="courseId"

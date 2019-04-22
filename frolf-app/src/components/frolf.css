@@ -1,15 +1,63 @@
 .frolf {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: row;
-}
+        flex-direction: row;
+    align-content: center;
 
+
+}
+body {
+    background-image: url("wvbg2.png");
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: darken;
+
+}
 .container-div {
     margin-top: 15vh;
-    padding: 5vw;
+    /* padding: 7.5vw; */
+    z-index: 1;
+
 }
 
 .dropdown-basic {
     margin-top: 10vh;
+}
+
+.navbar {
+    background-color: aliceblue;
+    z-index: 10;
+    opacity: 1;
+}
+
+.icon--logo{
+    height: 150px;
+    width: 150px;
+    border: solid 4px rgb(113, 162, 211)
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: 10vw;
+    background-color: rgba(235, 246, 255, 0.719)
+}
+.wm{
+    padding: 25px;
+}
+
+.form-control{
+ width: 100%;
+}
+
+.roundForm{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-style: bold;
+    background-color: rgba(240, 248, 255, 0.726);
+    margin: 0 100px;
 }

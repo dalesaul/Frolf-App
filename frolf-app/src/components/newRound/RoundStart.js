@@ -10,7 +10,6 @@ export default class RoundStart extends Component {
 
         roundId: "",
         date: "",
-
         courseId: "",
         roundScore: "0",
         holes: []
@@ -65,7 +64,7 @@ export default class RoundStart extends Component {
 
                      <button
                     type="submit"
-                    className="btn btn-success"
+                    className="btn btn-success final-btn"
                     onClick={this.finalizeRound}
 
                     >
