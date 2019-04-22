@@ -5,8 +5,6 @@ import Callback from "./Authentication/Callback"
 import CourseManager from '../modules/CourseManager';
 import Home from "./Home/home"
 import Welcome from "./Welcome/Welcome"
-// import NewRound from "./newRound/CourseSelect"
-// import RoundHistoryList from "./roundHistory/RoundHistoryList"
 import HistoryManager from '../modules/HistoryManager';
 import CourseSelect from "./newRound/CourseSelect"
 import RoundStart from "./newRound/RoundStart"
@@ -20,9 +18,6 @@ import RoundFinish from './roundHistory/RoundFinish';
 export default class ApplicationViews extends Component {
     state = {
         welcome: [],
-        // home: [],
-        // newRound: [],
-        // roundHistory: [],
         courses: [],
         rounds: [],
         holes: [],
@@ -47,9 +42,6 @@ componentDidMount(){
     .then(welcome => (newState.welcome = welcome))
     .then(home => (newState.home = home))
     .then(courseSelect => (newState.courseSelect = courseSelect))
-    // .then(newRound => (newState.newRound = newRound))
-    // .then(HoleManager.getAllHoles)
-    // .then(holes => (newState.holes = holes))
     .then(HistoryManager.getAllUserRounds)
     .then(roundHistory =>  (newState.roundHistory = roundHistory))
     .then(roundStart => (newState.roundStart = roundStart))
@@ -72,7 +64,7 @@ render() {
                     if (Auth0Client.isAuthenticated()) {
                     return <Home {...props} home={this.state.home}
                                             courseSelect={this.state.courseSelect} />
-                        // <Course course={this.course}>
+
 
                 } else {
 
@@ -80,17 +72,7 @@ render() {
                   }
                 }} />
 
-        {/* <Route exact path="/newRound" render={(props) => {
-                    if (Auth0Client.isAuthenticated()) {
-                    return <NewRound {...props}
-                    newRound={this.state.newRound}
-                    roundStart={this.state.RoundStart}
-                    />
-                } else {
 
-                    return null;
-                  }
-                }} /> */}
 
         <Route exact path="/newRound/courseSelect" render={(props) => {
                     if (Auth0Client.isAuthenticated()) {

@@ -6,12 +6,7 @@ import flag from "./GFlag_icon.png"
 
 export default class HoleCard extends Component {
 
-// state= {
-//     roundScore: "",
-//     roundId: "",
-//     courseId: ""
 
-// }
 
 
 
@@ -26,7 +21,7 @@ export default class HoleCard extends Component {
                 Par {this.props.value}
 
                 <Link className="nav-link" to={`/${this.props.roundId}/${this.props.courseId}/${this.props.holeId}`}  >
-                {/* roundId={this.props.roundId} holeNumber={this.props.id} holeId={this.props.holeId} */}
+
                 Enter Score
                 </Link>
 

@@ -10,15 +10,13 @@ export default class RoundStart extends Component {
 
         roundId: "",
         date: "",
-        // userId: "",
+
         courseId: "",
         roundScore: "0",
-        holes: [],
-        // number: "",
-        // par: ""
+        holes: []
 
     }
-    // *** THIS IS CALLED BY onClick EVENT TRIGGER AND NEEDS TO REDIRECT TO THE roundHistory/roundId PAGE.***
+
 
 
     finalizeRound = evt => {
