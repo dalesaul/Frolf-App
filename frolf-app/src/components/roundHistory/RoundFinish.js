@@ -7,10 +7,7 @@ import RoundManager from "../../modules/RoundManager";
 export default class RoundFinish extends Component {
 
   state ={
-    roundScore: "",
-    // date: ""
-    // courseName: "",
-    // scores: []
+    roundScore: ""
   }
 
   //GET ALL scores FOR THIS ROUND FROM THE shots DATABASE
@@ -23,7 +20,7 @@ export default class RoundFinish extends Component {
         return shots.score;
 
       })
-      // console.log(round.scores);
+      //THIS ADDS holeScores TOGETHER TO GET A roundScore.
       var total = shotScores.reduce(function(prev, curr) {
         return prev + curr;
       });
@@ -35,25 +32,6 @@ export default class RoundFinish extends Component {
     })
     })
   }
-  // console.log(total, "this is totalScore?")
-
-
-
-    // , THEN ADD THEM TOGETHER TO GET A roundScore.
-    // .then(totScore = this.r.score.reduce(totScore, nextValue => totScore += nextValue, 0))
-    //   .then(this.setState({
-    //     roundScore: totScore,
-    //     roundId: this.props.match.params.roundId
-    //   }))
-      // THIS GETS courseName TO APPEND TO ROUND SUMMARY
-      // .then((CourseManager.getOne(this.props.match.params.courseId)))
-      // .then(course => {
-      //   course.find(course.name)
-      //     this.setState({
-      //       courseName: course.name
-      //     })
-      //   })
-
 
     render () {
 
