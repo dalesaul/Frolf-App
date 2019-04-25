@@ -1,7 +1,6 @@
 # Welcome to **FFrolf-App**.
 
-![alt text][logo]
-[logo]: https://github.com/dalesaul/Frolf-App/blob/master/frolf-app/src/logo.svg "Come play around"
+![alt text](https://github.com/dalesaul/Frolf-App/blob/master/frolf-app/src/logo.svg "Come play around")
 
 
 ### FFrolf is The Friendly Frisbee Golf shot tracker for the greater Huntington WV metro area.
