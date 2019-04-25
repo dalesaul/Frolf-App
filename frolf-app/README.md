@@ -1,6 +1,6 @@
 # Welcome to **FFrolf-App**.
 
-![FFrolf-logo][logo]
+![alt text][logo]
 [logo]: https://github.com/dalesaul/Frolf-App/blob/master/frolf-app/src/logo.svg "Come play around"
 
 
